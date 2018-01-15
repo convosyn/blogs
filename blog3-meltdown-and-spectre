@@ -1,0 +1,60 @@
+References:
+https://support.apple.com/en-us/HT208394
+https://www.popsci.com/meltdown-spectre-what-to-do#page-3
+https://support.google.com/faqs/answer/7622138#android
+http://www.chromium.org/Home/chromium-security/site-isolation
+https://www.wired.com/story/meltdown-and-spectre-patches-take-toll/
+https://www.theregister.co.uk/2018/01/09/meltdown_spectre_slowdown/
+https://security.googleblog.com/2018/01/more-details-about-mitigations-for-cpu_4.html
+https://googleprojectzero.blogspot.in/2018/01/reading-privileged-memory-with-side.html
+
+-protect by keeping your software up to date
+-download from trusted sources.
+-patches are released to help protect against these security issues but can cause your computers to slow down about 30%.
+--particularly for programs that require a lot of requests to a kernel.
+-Spectre patch fixes are a more burden to industry(it is a vulnerability rather than a bug).
+-older processors are more impactful than newer ones
+-(an official statement)Microsoft said that consumer devices with processors from 2015 or earlier running Windows 7, 8, and 10  would be more likely to exhibit slowdowns.
+-Intel is trying hard to fix the bugs but currently significant performance drops are recorded.
+-critical infrastructures have not yet deployed the patches considering the performance issues 
+-The bigger complication will be identifying all of vulnerable devices, and making sure patches reach them eventually
+-data cache timing can be abused to efficiently leak information out of mis-speculated execution.
+
+-meltdown and spectre are two of the security flaws in very basic design of a CPU chip.
+-meltdown allows a hacker to see through the small memory that should be inaccessible by the non permitted program snippet.
+
+-Difficult to implement by an app running locally(MAC-IOS).
+
+-google products that are safe:
+-Search, YouTube, Google Ads products, Maps, Blogger, and other services), and the customer data held by Google, G Suite (e.g., Gmail, Calendar, Drive, Docs, and other G Suite services) is protected.
+-on android platform difficult and limited
+-on chrome use site isolation
+-chrome 64 to be released on 23 jan will include mitigations
+-install security patches for CPU at earliest.
+-We just want folks – particularly cloud subscribers and IT admins – to be aware of the effects
+-retpoline from google is a patch for meltdown
+-64-bit pcs are will get less performance hit as compared to 32 bit systems
+
+-can be exploited by java script running in a web browser.
+-spectre forces a software to make a compromise and then beign used to see what's going on.
+-apple watch is unaffected by both.
+-main cause is speculative execution.
+-Kernel page table isolation is a method of seperating the two address spaces for kernel and user processes thus preventing the exploitation of the security bug
+- this context-switch from user processes to kernel context takes time because it requires a complete reloading of the page tables.
+-it also flushes all the cache causing a further performance hit.
+-more on IO and system call related programs
+-with PCID all TLB entries need not to be flushed and can be retained in the processor
+-most kernel machines do not include this PCID feature.
+-In other words, if you're seeing crap performance after applying these fixes, look at your kernel configuration and get PCID enabled  – if the hardware feature is present in your chipset.
+
+
+- If the address is sufficiently cached, the load loads the data stored at the
+   given address, without respecting the privilege level.
+   Instructions that depend on the load are executed.
+   This is the vulnerable case.
+
+-affects almost all processors and cpus
+-cyber criminals use side channels to sniff data.
+-hard to mimic
+-perfect timings are required.
+-meltdown program enters highly secure kernel space.
