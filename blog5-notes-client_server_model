@@ -1,0 +1,2 @@
+--This is the process, which typically makes a request for information
+--the client needs to know the address of the server, but the server does not need to know the address or even the existence of the client prior to the connection being established
